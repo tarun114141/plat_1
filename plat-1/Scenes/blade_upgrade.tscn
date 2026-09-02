@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://d3m8f7k2yap1q"]
+
+[ext_resource type="Script" uid="uid://22a17b2k722q" path="res://Scripts/blade_upgrade.gd" id="1_blade"]
+[ext_resource type="Texture2D" uid="uid://y6lxa4c1b7y2" path="res://Assets/wheat.png" id="2_l0bj8"]
+[ext_resource type="Texture2D" uid="uid://bfxbbvgjkvav" path="res://Assets/wheat_icon.png" id="2_v3yyv"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_blade"]
+radius = 20.0
+
+[node name="wheat_stone" type="Area2D" unique_id=902184371]
+position = Vector2(76, -1)
+script = ExtResource("1_blade")
+icon = ExtResource("2_v3yyv")
+item_description = "Sharpens your blade, doubling damage for the next 10 strikes when used."
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1849203716]
+position = Vector2(1.0000114, 1.0000057)
+scale = Vector2(0.053507652, 0.06239068)
+texture = ExtResource("2_l0bj8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=749201847]
+shape = SubResource("CircleShape2D_blade")
+
+[node name="PromptLabel" type="Label" parent="." unique_id=391048201]
+visible = false
+offset_left = -60.0
+offset_top = -30.0
+offset_right = 60.0
+offset_bottom = -7.0
+text = "[W / UP] Pick Up"
+horizontal_alignment = 1
+vertical_alignment = 1

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://mnf0u3tx5mw3"
+path="res://.godot/imported/trimmed (1).wav-b05ba7de370c15ee4b4d0139a2fbc4c2.sample"
+
+[deps]
+
+source_file="res://Assets/usable/trimmed (1).wav"
+dest_files=["res://.godot/imported/trimmed (1).wav-b05ba7de370c15ee4b4d0139a2fbc4c2.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

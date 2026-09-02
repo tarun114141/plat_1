@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://boppvflvb6bxa"]
+
+[ext_resource type="Script" uid="uid://cwtd1011kmfnl" path="res://Scripts/health.gd" id="1_1nx07"]
+[ext_resource type="Texture2D" uid="uid://bv8girdnkw3sg" path="res://Assets/health/full_heart.png" id="2_s36ud"]
+[ext_resource type="Texture2D" uid="uid://dbh64snt5866u" path="res://Assets/health/empty_heart.png" id="3_jb86c"]
+
+[node name="health" type="Control" unique_id=256246195]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_1nx07")
+heart_full = ExtResource("2_s36ud")
+heart_empty = ExtResource("3_jb86c")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1014348688]
+layout_mode = 1
+offset_left = 16.0
+offset_top = 16.0
+offset_right = 180.0
+offset_bottom = 56.0
+theme_override_constants/separation = 6

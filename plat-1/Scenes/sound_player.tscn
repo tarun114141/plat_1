@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://cyxqok8qomfno"]
+
+[ext_resource type="Script" uid="uid://ds7v8taxr37k" path="res://Scripts/sound_player.gd" id="1_soundplayer"]
+[ext_resource type="AudioStream" uid="uid://cg8ai8rc6gbg7" path="res://Assets/sounds/bg/menu.mp3" id="2_oev1h"]
+[ext_resource type="AudioStream" uid="uid://bqn2o2m8xlogf" path="res://Assets/sounds/bg/health.mp3" id="3_7wonq"]
+[ext_resource type="AudioStream" uid="uid://dc6wjbvgq5gey" path="res://Assets/sounds/bg/Heart-Of-The-Ocean(chosic.com).mp3" id="3_s7n7r"]
+[ext_resource type="AudioStream" uid="uid://bhddqfjcxldws" path="res://Assets/sounds/bg/night.mp3" id="4_s7n7r"]
+[ext_resource type="AudioStream" uid="uid://meajo3u16an3" path="res://Assets/sounds/bg/fight.mp3" id="5_080do"]
+
+[node name="SoundPlayer" type="Node" unique_id=1516583759]
+script = ExtResource("1_soundplayer")
+main_menu_music = ExtResource("2_oev1h")
+home_music = ExtResource("3_s7n7r")
+health_hunt_music = ExtResource("3_7wonq")
+wheatstone_music = ExtResource("4_s7n7r")
+fighting_pit_music = ExtResource("5_080do")
+
+[node name="AudioStreamPlayerA" type="AudioStreamPlayer" parent="." unique_id=1077221943]
+bus = &"music"
+
+[node name="AudioStreamPlayerB" type="AudioStreamPlayer" parent="." unique_id=753985952]
+bus = &"music"

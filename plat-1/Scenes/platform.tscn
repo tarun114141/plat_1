@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://ccuf3e5fi8oia"]
+
+[ext_resource type="Texture2D" uid="uid://bdh5u66ucq80a" path="res://Assets/platforms.png" id="1_1rc8e"]
+[ext_resource type="Script" path="res://Scripts/platform.gd" id="2_script"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1rc8e"]
+size = Vector2(30, 7)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_detector"]
+size = Vector2(30, 10)
+
+[node name="platform_ brown" type="AnimatableBody2D" unique_id=184604279]
+script = ExtResource("2_script")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=85905526]
+texture = ExtResource("1_1rc8e")
+region_enabled = true
+region_rect = Rect2(16.378807, 16.291779, 31.259445, 9.694386)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1274727143]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_1rc8e")
+
+[node name="PlayerDetector" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerDetector"]
+position = Vector2(0, -4)
+shape = SubResource("RectangleShape2D_detector")

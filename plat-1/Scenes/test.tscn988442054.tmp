@@ -1,0 +1,53 @@
+[gd_scene format=3 uid="uid://clysfxt55rv5k"]
+
+[ext_resource type="PackedScene" uid="uid://gyjc87thcaml" path="res://Scenes/hero.tscn" id="1_lc1oi"]
+[ext_resource type="PackedScene" uid="uid://h3gy2pwvs2od" path="res://enemie.tscn" id="2_8od7v"]
+[ext_resource type="PackedScene" uid="uid://cjlfkj65rpqd1" path="res://Scenes/health_potion.tscn" id="3_potion"]
+[ext_resource type="PackedScene" path="res://Scenes/bench.tscn" id="4_bench"]
+[ext_resource type="PackedScene" uid="uid://c21mhc2oyig7x" path="res://Scenes/coin.tscn" id="5_35xla"]
+[ext_resource type="PackedScene" path="res://Scenes/blade_upgrade.tscn" id="6_blade"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_o3qbn"]
+distance = -644.0
+
+[node name="Node2D" type="Node2D" unique_id=1926635066]
+
+[node name="Area2D" type="StaticBody2D" parent="." unique_id=1295158919]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1352356250]
+shape = SubResource("WorldBoundaryShape2D_o3qbn")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=720261488]
+offset_left = -257.0
+offset_top = 646.0
+offset_right = 1032.0
+offset_bottom = 758.0
+pivot_offset = Vector2(-11, -2)
+color = Color(0.8413066, 0.53816235, 0.70983416, 1)
+
+[node name="Bench" parent="." unique_id=987123456 instance=ExtResource("4_bench")]
+position = Vector2(180, 634)
+
+[node name="CharacterBody2D" parent="." unique_id=263064554 instance=ExtResource("1_lc1oi")]
+position = Vector2(102, 478)
+
+[node name="Enemie" parent="." unique_id=1098163712 instance=ExtResource("2_8od7v")]
+position = Vector2(446, 583)
+scale = Vector2(2, 2)
+
+[node name="HealthPotion1" parent="." unique_id=1413693490 instance=ExtResource("3_potion")]
+position = Vector2(250, 620)
+item_name = "Small Health Potion"
+
+[node name="HealthPotion2" parent="." unique_id=541183660 instance=ExtResource("3_potion")]
+position = Vector2(340, 605)
+scale = Vector2(2.2, 2.2)
+item_id = "health_potion_large"
+item_name = "Big Health Potion"
+heal_amount = 3
+
+[node name="coin" parent="." unique_id=1639250326 instance=ExtResource("5_35xla")]
+position = Vector2(-122, 588)
+
+[node name="BladeUpgrade" parent="." unique_id=902184371 instance=ExtResource("6_blade")]
+position = Vector2(50, 620)

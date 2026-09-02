@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://cjlfkj65rpqd1"]
+
+[ext_resource type="Script" uid="uid://iirqjbwnx475" path="res://Scripts/health_potion.gd" id="1_potion"]
+[ext_resource type="Texture2D" uid="uid://x1vyno3r4iai" path="res://Assets/world_tileset.png" id="2_x2qfu"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x2qfu"]
+atlas = ExtResource("2_x2qfu")
+region = Rect2(3.2307186, 114.074104, 9.136349, 13.502899)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_potion"]
+radius = 24.0
+
+[node name="HealthPotion" type="Area2D" unique_id=501023075]
+script = ExtResource("1_potion")
+icon = SubResource("AtlasTexture_x2qfu")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2026057362]
+texture = ExtResource("2_x2qfu")
+region_enabled = true
+region_rect = Rect2(0, 113.08235, 15.932991, 15.234024)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1885632911]
+shape = SubResource("CircleShape2D_potion")
+
+[node name="PromptLabel" type="Label" parent="." unique_id=861461087]
+visible = false
+offset_left = -45.0
+offset_top = -40.0
+offset_right = 45.0
+offset_bottom = -17.0
+text = "[UP] Pick Up"
+horizontal_alignment = 1
+vertical_alignment = 1

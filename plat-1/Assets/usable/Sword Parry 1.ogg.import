@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://b10l18xhl7sby"
+path="res://.godot/imported/Sword Parry 1.ogg-20af38cecc752e27119a05b0a0999dbf.oggvorbisstr"
+
+[deps]
+
+source_file="res://Assets/usable/Sword Parry 1.ogg"
+dest_files=["res://.godot/imported/Sword Parry 1.ogg-20af38cecc752e27119a05b0a0999dbf.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

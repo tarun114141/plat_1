@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://pgm0m5xhidmh"]
+
+[ext_resource type="Script" uid="uid://cotbkm351e4s0" path="res://monster/spikes.gd" id="1_a5dqs"]
+[ext_resource type="PackedScene" uid="uid://dlfmj723jmk4u" path="res://monster/kill.tscn" id="2_gwqs2"]
+[ext_resource type="Shader" uid="uid://c5w1k7p24q17a" path="res://monster/fire_shader.gdshader" id="3_fire"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_fire"]
+shader = ExtResource("3_fire")
+shader_parameter/core_color = Color(1, 0.98, 0.75, 1)
+shader_parameter/inner_color = Color(1, 0.55, 0.1, 1)
+shader_parameter/outer_color = Color(0.92, 0.15, 0.02, 1)
+shader_parameter/smoke_color = Color(0.25, 0.04, 0.02, 0)
+shader_parameter/flame_speed = 2.8
+shader_parameter/flame_scale = 3.2
+shader_parameter/turbulence = 0.45
+shader_parameter/column_width = 0.55
+shader_parameter/edge_softness = 0.35
+shader_parameter/glow_intensity = 1.4
+shader_parameter/ember_density = 1.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gwqs2"]
+size = Vector2(24, 76)
+
+[node name="spikes" type="Node2D" unique_id=1594900307]
+script = ExtResource("1_a5dqs")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=5560105]
+material = SubResource("ShaderMaterial_fire")
+offset_left = -22.0
+offset_top = -88.0
+offset_right = 22.0
+offset_bottom = 12.0
+
+[node name="Area2D2" parent="." unique_id=1931125104 instance=ExtResource("2_gwqs2")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2" unique_id=493027733]
+position = Vector2(0, -38)
+shape = SubResource("RectangleShape2D_gwqs2")

@@ -1,0 +1,130 @@
+[gd_scene format=3 uid="uid://bc24s52g7nmg8"]
+
+[ext_resource type="Script" uid="uid://vt62iivmmhhq" path="res://Scripts/enemy_2.gd" id="1_48bj6"]
+[ext_resource type="Texture2D" uid="uid://2x8awiw1cqim" path="res://Assets/sprites/slime_purple.png" id="2_qit8y"]
+[ext_resource type="PackedScene" uid="uid://c8kvolwlt8idp" path="res://Scenes/kill_zone.tscn" id="3_4gdgy"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8n4gd"]
+atlas = ExtResource("2_qit8y")
+region = Rect2(0, 24, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pfsys"]
+atlas = ExtResource("2_qit8y")
+region = Rect2(24, 24, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_plxki"]
+atlas = ExtResource("2_qit8y")
+region = Rect2(48, 24, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0o7g4"]
+atlas = ExtResource("2_qit8y")
+region = Rect2(72, 24, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mdifi"]
+atlas = ExtResource("2_qit8y")
+region = Rect2(48, 48, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tvefu"]
+atlas = ExtResource("2_qit8y")
+region = Rect2(72, 48, 24, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fhldr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8n4gd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pfsys")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_plxki")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0o7g4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mdifi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tvefu")
+}],
+"loop": true,
+"name": &"Enemy_default",
+"speed": 11.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bc858"]
+size = Vector2(8, 10)
+
+[node name="Enemy_2" type="Node2D" groups=["Enemy"]]
+script = ExtResource("1_48bj6")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -12)
+sprite_frames = SubResource("SpriteFrames_fhldr")
+animation = &"Enemy_default"
+autoplay = "Enemy_default"
+
+[node name="Kill_zone" parent="AnimatedSprite2D" instance=ExtResource("3_4gdgy")]
+position = Vector2(91, 13)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite2D/Kill_zone" groups=["Enemy"]]
+light_mask = 3
+z_index = 1
+position = Vector2(-91, -7)
+shape = SubResource("RectangleShape2D_bc858")
+one_way_collision_margin = 0.0
+debug_color = Color(0.355082, 0.590458, 0.520784, 0.42)
+
+[node name="Ray_left" type="RayCast2D" parent="AnimatedSprite2D"]
+z_index = 2
+position = Vector2(1, 9)
+target_position = Vector2(-169, -3)
+collision_mask = 3
+collide_with_areas = true
+
+[node name="Ray_right" type="RayCast2D" parent="AnimatedSprite2D"]
+z_index = 2
+position = Vector2(1, 9)
+target_position = Vector2(155, -2)
+collision_mask = 3
+
+[node name="Ray_left_10" type="RayCast2D" parent="AnimatedSprite2D"]
+position = Vector2(0, 9)
+target_position = Vector2(-167, -23)
+collision_mask = 3
+
+[node name="Ray_right_2" type="RayCast2D" parent="AnimatedSprite2D"]
+position = Vector2(0, 9)
+target_position = Vector2(152, -22)
+collision_mask = 3
+
+[node name="Ray_left_11" type="RayCast2D" parent="AnimatedSprite2D"]
+position = Vector2(0, 9)
+target_position = Vector2(-164, -42)
+collision_mask = 3
+
+[node name="Ray_right_1" type="RayCast2D" parent="AnimatedSprite2D"]
+position = Vector2(1, 8)
+target_position = Vector2(146, -37)
+collision_mask = 3
+
+[node name="Ray_left_11_5" type="RayCast2D" parent="AnimatedSprite2D"]
+position = Vector2(1, 2)
+target_position = Vector2(-159, -48)
+collision_mask = 3
+
+[node name="Ray_right_0_5" type="RayCast2D" parent="AnimatedSprite2D"]
+target_position = Vector2(142, -40)
+collision_mask = 3
+
+[node name="Ray_right_top" type="RayCast2D" parent="AnimatedSprite2D"]
+position = Vector2(2, -1)
+target_position = Vector2(126, -56)
+collision_mask = 3
+
+[node name="Ray_left_top" type="RayCast2D" parent="AnimatedSprite2D"]
+position = Vector2(-2, 0)
+target_position = Vector2(-129, -64)
+collision_mask = 3
