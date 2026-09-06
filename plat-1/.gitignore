@@ -1,3 +1,16 @@
 # Godot 4+ specific ignores
 .godot/
 /android/
+web_export
+
+
+
+# Large builds and archives
+web_export.zip
+*.zip
+
+# OS / Editor artifacts
+.DS_Store
+Thumbs.db
+.vscode/
+
